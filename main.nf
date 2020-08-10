@@ -19,6 +19,6 @@ process remove_and_anootate {
     outfile=aggregate_file.toString().replaceAll(/bcf/, "vcf.gz")
     """
     
-    mv ${aggregate_file} ${outfile}
+    mv ${params.final_sample_list} ${outfile}
     """
 }
