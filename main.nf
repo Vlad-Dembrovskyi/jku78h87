@@ -19,10 +19,6 @@ process remove_and_anootate {
     outfile=aggregate_file.toString().replaceAll(/bcf/, "vcf.gz")
     """
     
-    bcftools view -S ${params.final_sample_list} \
-     -Oz \
-     --threads ${params.threads}
-     -o ${outfile}
-     ${aggregate_file}
+    mv ${aggregate_file} ${outfile}
     """
 }
